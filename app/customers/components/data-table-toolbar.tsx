@@ -5,10 +5,15 @@ import { X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Link from "next/link"
 import { DataTableViewOptions } from "./data-table-view-options"
 
 import { priorities, statuses } from "../data/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
+
+import {
+  Download, UserPlus
+} from "lucide-react"
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>
@@ -58,6 +63,14 @@ export function DataTableToolbar<TData>({
         )}
       </div>
       <DataTableViewOptions table={table} />
+      <Button variant="outline" className="ml-2 hidden h-8 lg:flex" size="sm">
+          <Download className="mr-2 h-4 w-4" /> Export CSV
+        </Button>
+      <Button variant="default" className="ml-2 hidden h-8 lg:flex" size="sm" asChild>
+        <Link href="/add-client">
+          <UserPlus className="mr-2 h-4 w-4" /> Add client
+        </Link>
+      </Button>
     </div>
   )
 }
