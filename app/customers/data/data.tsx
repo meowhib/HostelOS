@@ -1,71 +1,51 @@
 import {
-  ArrowDownToLine,
-  ArrowRightToLine,
-  ArrowUpCircle,
-  ArrowUpToLine,
-  CheckCircle2,
-  Circle,
   HelpCircle,
+  Circle,
+  ArrowUpCircle,
+  CheckCircle2,
   XCircle,
+  ArrowDownCircle,
+  AlertCircle,
 } from "lucide-react"
 
-export const labels = [
+export const reservations = [
   {
-    value: "bug",
-    label: "Bug",
+    value: "booking",
+    label: "Booking",
   },
   {
-    value: "feature",
-    label: "Feature",
+    value: "hostelworld",
+    label: "Hostelworld",
   },
   {
-    value: "documentation",
-    label: "Documentation",
+    value: "expedia",
+    label: "Expedia",
+  },
+  {
+    value: "agoda",
+    label: "Agoda",
   },
 ]
 
-export const statuses = [
+export const paymentStatuses = [
   {
-    value: "backlog",
-    label: "Backlog",
-    icon: HelpCircle,
-  },
-  {
-    value: "todo",
-    label: "Todo",
-    icon: Circle,
-  },
-  {
-    value: "in progress",
-    label: "In Progress",
-    icon: ArrowUpCircle,
-  },
-  {
-    value: "done",
-    label: "Done",
+    label: "Paid",
+    value: "paid",
     icon: CheckCircle2,
   },
   {
-    value: "canceled",
+    label: "Unpaid",
+    value: "unpaid",
+    icon: AlertCircle,
+  },
+  {
     label: "Canceled",
+    value: "canceled",
     icon: XCircle,
   },
-]
-
-export const priorities = [
   {
-    label: "Low",
-    value: "low",
-    icon: ArrowDownToLine,
-  },
-  {
-    label: "Medium",
-    value: "medium",
-    icon: ArrowRightToLine,
-  },
-  {
-    label: "High",
-    value: "high",
-    icon: ArrowUpToLine,
+    label: "Refunded",
+    value: "refunded",
+    icon: ArrowDownCircle,
   },
 ]

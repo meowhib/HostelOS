@@ -6,8 +6,7 @@ import { z } from "zod"
 
 import { columns } from "./components/columns"
 import { DataTable } from "./components/data-table"
-import { UserNav } from "./components/user-nav"
-import { taskSchema } from "./data/schema"
+import { clientSchema } from "./data/schema"
 
 export const metadata: Metadata = {
   title: "Customers",
@@ -20,9 +19,9 @@ async function getTasks() {
     path.join(process.cwd(), "app/customers/data/tasks.json")
   )
 
-  const tasks = JSON.parse(data.toString())
+  const clients = JSON.parse(data.toString())
 
-  return z.array(taskSchema).parse(tasks)
+  return z.array(clientSchema).parse(clients)
 }
 
 export default async function TaskPage() {
@@ -34,12 +33,12 @@ export default async function TaskPage() {
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
           <p className="text-muted-foreground">
-            Here&apos;s a list of your tasks for this month!
+            Here&apos;s a list of your clients for this month!
           </p>
         </div>
-        <div className="flex items-center space-x-2">
+        {/* <div className="flex items-center space-x-2">
           <UserNav />
-        </div>
+        </div> */}
       </div>
       <DataTable data={tasks} columns={columns} />
     </div>
